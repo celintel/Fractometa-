@@ -1,4 +1,4 @@
-# Fractometa
+# Fractomata
 
 Explore `x XOR y` on a grid up to 500 x 500 and highlight prime values by category.
 
