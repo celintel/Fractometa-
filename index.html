@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fractometa</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="fm-root">
+  <h1 class="fm-title">Fractometa</h1>
+
+  <div class="fm-row">
+    <label class="fm-label" for="fm-size">Size</label>
+    <input type="range" id="fm-size" class="fm-fill" min="4" max="500" value="64" step="1">
+    <span id="fm-size-out" class="fm-out fm-out--wide">64 x 64</span>
+  </div>
+
+  <canvas id="fm-canvas" class="fm-canvas"></canvas>
+
+  <div class="fm-grid fm-grid--2 fm-controls">
+    <button id="fm-play" class="fm-btn">Play munching squares</button>
+    <button id="fm-crystal" class="fm-btn">Play crystal mode</button>
+    <button id="fm-exit" class="fm-btn fm-span">Exit to filters</button>
+  </div>
+
+  <div class="fm-row">
+    <label id="fm-scrub-label" class="fm-label fm-label--fixed" for="fm-scrub">t</label>
+    <input type="range" id="fm-scrub" class="fm-fill" min="0" max="63" value="0" step="1">
+    <span id="fm-scrub-out" class="fm-out">0</span>
+  </div>
+  <div class="fm-row">
+    <label class="fm-label fm-label--fixed" for="fm-speed">Speed</label>
+    <input type="range" id="fm-speed" class="fm-fill" min="1" max="120" value="12" step="1">
+    <span id="fm-speed-out" class="fm-out">12/s</span>
+  </div>
+
+  <div class="fm-grid fm-grid--2 fm-fields">
+    <label class="fm-field">Crystal max size
+      <input type="number" id="fm-max" min="4" max="999999" value="2000">
+    </label>
+    <label class="fm-field">Grow by
+      <select id="fm-grow">
+        <option value="1">+1 per tick</option>
+        <option value="5">+5</option>
+        <option value="25">+25</option>
+        <option value="100">+100</option>
+        <option value="1000">+1,000</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="fm-grid fm-grid--3 fm-stats">
+    <div class="fm-tile"><div class="fm-tile-label">Highlighted</div><div id="fm-count" class="fm-tile-value">0</div></div>
+    <div class="fm-tile"><div class="fm-tile-label">Share</div><div id="fm-share" class="fm-tile-value">0%</div></div>
+    <div class="fm-tile"><div class="fm-tile-label">Frame time</div><div id="fm-frame" class="fm-tile-value">0 ms</div></div>
+  </div>
+
+  <div id="fm-chips" class="fm-grid fm-grid--2 fm-chips"></div>
+
+  <label class="fm-check"><input type="checkbox" id="fm-dim" checked> Dim other cells</label>
+  <p id="fm-info" class="fm-info">Tap a cell to inspect it.</p>
+</main>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
